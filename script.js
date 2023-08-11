@@ -38,29 +38,29 @@ for(var i = 0; i < characterLength; i++) {
 }
 return password;
 }
-
+//this function is created to get the prompt and set the choices that need to be selected in order to mkae the password
 function getPrompt(){
   choice = []
-
+//displays message, how may characters
   characterLength = parseInt(prompt('How many characters would you like your password to be? (Between 8 -1 28)'));
-
+// sets message to state is the incorrect password parameters are selected (not within set character amount)
   if (isNaN(characterLength) || characterLength < 8 || characterLength > 128) {
     alert('Character length has to be a number between 8-128 digits. Try Again');
     return false;
   }
-
+// prompt for lowercase letters
   if (confirm('Would you like lowercase letters in your password?')) {
     choice = choice.concat(lowerCase);
   }
-
+// prompt for upper case
   if (confirm('Would you like Upper Case letters in your password?')) {
     choice = choice.concat(number);
   }
-
+// prompt for numbers
   if (confirm('Would you like numbers in your password?')) {
     choice = choice.concat(number);
   }
-
+  // prompt for speacial characters
   if (confirm('Would you like special characters in your password?')) {
     choice = choice.concat(specialChar);
   }
